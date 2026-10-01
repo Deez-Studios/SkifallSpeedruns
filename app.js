@@ -83,8 +83,7 @@ function render() {
 			{ value: index + 1 },
 			{ value: row.name || "Unnamed" },
 			...LEVEL_KEYS.map(key => ({
-				value: formatTime(row[key]),
-				best: bests[key] !== null && Number(row[key]) === bests[key]
+				value: formatTime(row[key])
 			})),
 			{ value: formatTime(row.current_total) },
 			{
