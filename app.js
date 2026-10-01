@@ -109,7 +109,7 @@ function render() {
 		const tr = document.createElement("tr");
 		const td = document.createElement("td");
 		td.colSpan = 12;
-		td.textContent = rows.length ? "No runners match that search." : "No runs recorded yet.";
+		td.textContent = rows.length ? "NO RUNNERS FOUND." : "NO RUNS YET.";
 		td.className = "empty";
 		td.style.textAlign = "center";
 		tr.appendChild(td);
@@ -127,7 +127,7 @@ function updateSummary() {
 async function loadLeaderboard() {
 	status.classList.remove("visible");
 	refreshButton.disabled = true;
-	refreshButton.textContent = "Loading…";
+	refreshButton.textContent = "LOADING...";
 
 	try {
 		const response = await fetch(`${SUPABASE_URL}/rest/v1/${LEADERBOARD_VIEW}?select=*`, {
@@ -140,15 +140,15 @@ async function loadLeaderboard() {
 		rows = await response.json();
 		updateSummary();
 		render();
-		updatedLabel.textContent = `Updated ${new Date().toLocaleTimeString([], { hour: "2-digit", minute: "2-digit" })}`;
+		updatedLabel.textContent = `UPDATED ${new Date().toLocaleTimeString([], { hour: "2-digit", minute: "2-digit" })}`;
 	} catch (error) {
 		console.error(error);
-		status.textContent = "Could not load records. Check the public leaderboard view in Supabase.";
+		status.textContent = "COULD NOT LOAD RECORDS.";
 		status.classList.add("visible");
-		updatedLabel.textContent = "Leaderboard offline";
+		updatedLabel.textContent = "OFFLINE";
 	} finally {
 		refreshButton.disabled = false;
-		refreshButton.textContent = "Refresh";
+		refreshButton.textContent = "REFRESH";
 	}
 }
 
