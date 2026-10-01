@@ -1,5 +1,5 @@
 :root {
-	--pico-font-family: "DotGothic16", monospace;
+	--pico-font-family: "IBM Plex Mono", monospace;
 	--pico-font-size: 112.5%;
 	--pico-background-color: #f4f8fa;
 	--pico-color: #102635;
@@ -37,7 +37,7 @@ body {
 
 body {
 	margin: 0;
-	font-family: "DotGothic16", monospace;
+	font-family: "IBM Plex Mono", monospace;
 	color: var(--ink);
 	letter-spacing: .045em;
 }
@@ -61,17 +61,19 @@ table {
 
 .page-header h1 {
 	margin: 0;
-	font-size: clamp(3.8rem, 6.2vw, 6.1rem);
-	line-height: .92;
-	letter-spacing: .075em;
+	font-family: "Press Start 2P", monospace;
+	font-size: clamp(2.9rem, 5vw, 5rem);
+	line-height: 1.05;
+	letter-spacing: .06em;
 	color: var(--ink);
 }
 
 .subtitle {
-	margin: .8rem 0 0;
-	font-size: clamp(1.05rem, 1.45vw, 1.3rem);
-	line-height: 1.2;
-	letter-spacing: .13em;
+	margin: .65rem 0 0;
+	font-family: "Press Start 2P", monospace;
+	font-size: clamp(.8rem, 1.1vw, 1rem);
+	line-height: 1.45;
+	letter-spacing: .06em;
 	color: var(--blue-dark);
 }
 
@@ -79,17 +81,17 @@ table {
 	display: flex;
 	align-items: center;
 	flex-wrap: wrap;
-	gap: 1rem 2.2rem;
-	margin-top: 1.8rem;
+	gap: 1rem 2.4rem;
+	margin-top: 1.6rem;
 	font-size: 1rem;
-	letter-spacing: .08em;
+	letter-spacing: .055em;
 	color: var(--muted);
 }
 
 .summary span {
 	display: inline-flex;
-	align-items: center;
-	gap: .45rem;
+	align-items: baseline;
+	gap: .55rem;
 }
 
 .summary strong,
@@ -99,14 +101,16 @@ table {
 }
 
 .summary strong {
-	font-size: 1.4rem;
-	letter-spacing: .05em;
+	font-size: 1.08rem;
+	font-weight: 700;
+	letter-spacing: .03em;
 	color: var(--ink);
 }
 
 .summary em {
-	font-size: 1rem;
-	letter-spacing: .08em;
+	font-size: .98rem;
+	font-weight: 600;
+	letter-spacing: .045em;
 	color: var(--muted);
 }
 
@@ -128,8 +132,8 @@ table {
 	margin: 0;
 	border: 2px solid var(--ink);
 	box-shadow: none;
-	font-size: 1.2rem;
-	letter-spacing: .09em;
+	font-size: 1rem;
+	letter-spacing: .035em;
 }
 
 .toolbar input {
@@ -180,8 +184,9 @@ table {
 }
 
 .toolbar small {
-	font-size: 1.2rem;
-	letter-spacing: .1em;
+	font-size: .95rem;
+	font-weight: 600;
+	letter-spacing: .03em;
 	color: var(--muted);
 }
 
@@ -242,9 +247,9 @@ thead th {
 	padding: 1rem .85rem;
 	background: var(--ice);
 	color: var(--blue-dark);
-	font-size: 1.2rem;
+	font-size: 1rem;
 	font-weight: 700;
-	letter-spacing: .14em;
+	letter-spacing: .045em;
 	text-align: left;
 	vertical-align: middle;
 }
@@ -253,7 +258,7 @@ tbody td {
 	padding: 1rem .85rem;
 	background: #fff;
 	color: #314a56;
-	font-size: 1.15rem;
+	font-size: 1rem;
 }
 
 tbody tr:nth-child(even) td {
@@ -293,9 +298,9 @@ td:first-child {
 .current-total-column .sort-button span {
 	display: inline-block;
 	margin-top: .3rem;
-	font-size: .95rem;
-	font-weight: 400;
-	letter-spacing: .09em;
+	font-size: .78rem;
+	font-weight: 500;
+	letter-spacing: .025em;
 	color: var(--muted);
 }
 
@@ -336,8 +341,8 @@ td:first-child {
 
 .legend {
 	margin: 1rem 0 0;
-	font-size: 1.15rem;
-	letter-spacing: .12em;
+	font-size: 1rem;
+	letter-spacing: .035em;
 	font-weight: 700;
 	color: var(--gold);
 }
