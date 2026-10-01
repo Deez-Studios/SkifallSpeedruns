@@ -1,5 +1,5 @@
 :root {
-	--pico-font-family: "Silkscreen", monospace;
+	--pico-font-family: "Pixelify Sans", monospace;
 	--pico-font-size: 100%;
 	--pico-background-color: #f4f8fa;
 	--pico-color: #102635;
@@ -37,7 +37,7 @@ body {
 
 body {
 	margin: 0;
-	font-family: "Silkscreen", monospace;
+	font-family: "Pixelify Sans", monospace;
 	color: var(--ink);
 }
 
@@ -60,15 +60,16 @@ table {
 
 .page-header h1 {
 	margin: 0;
-	font-size: clamp(3rem, 5vw, 4.8rem);
-	line-height: .95;
-	letter-spacing: -.055em;
+	font-size: clamp(3.5rem, 5.4vw, 5.2rem);
+	line-height: .9;
+	letter-spacing: .01em;
+	margin-left: -.05em;
 	color: var(--ink);
 }
 
 .subtitle {
 	margin: .7rem 0 0;
-	font-size: clamp(.9rem, 1.35vw, 1.15rem);
+	font-size: clamp(1.05rem, 1.45vw, 1.3rem);
 	line-height: 1.2;
 	letter-spacing: .04em;
 	color: var(--blue-dark);
@@ -76,18 +77,34 @@ table {
 
 .summary {
 	display: flex;
-	align-items: baseline;
+	align-items: center;
 	flex-wrap: wrap;
-	gap: .75rem 1.8rem;
-	margin-top: 1rem;
-	font-size: .78rem;
+	gap: .8rem 2rem;
+	margin-top: 1.05rem;
+	font-size: .92rem;
 	color: var(--muted);
 }
 
 .summary strong {
-	margin-right: .18rem;
-	font-size: 1.05rem;
+	margin: 0;
+	font-size: 1.1rem;
+	line-height: 1;
 	color: var(--ink);
+}
+
+.summary span {
+	display: inline-flex;
+	align-items: center;
+	gap: .45rem;
+	line-height: 1;
+}
+
+.rank-heading {
+	display: inline-block;
+	font-family: "Pixelify Sans", monospace;
+	font-size: 1.05rem;
+	font-weight: 700;
+	line-height: 1;
 }
 
 .leaderboard {
@@ -107,7 +124,7 @@ table {
 	margin: 0;
 	border: 2px solid var(--ink);
 	box-shadow: none;
-	font-size: .8rem;
+	font-size: .95rem;
 }
 
 .toolbar input {
@@ -144,7 +161,9 @@ table {
 }
 
 .toolbar small {
-	font-size: .7rem;
+	font-size: .9rem;
+	font-weight: 600;
+	line-height: 1;
 	color: var(--muted);
 }
 
@@ -169,10 +188,10 @@ table {
 }
 
 table {
-	min-width: 92rem;
+	min-width: 104rem;
 	margin: 0;
 	border-collapse: collapse;
-	font-size: .82rem;
+	font-size: 1rem;
 	font-variant-numeric: tabular-nums;
 }
 
@@ -190,17 +209,18 @@ td:last-child {
 }
 
 thead th {
-	padding: .9rem .8rem;
+	padding: 1rem .9rem;
 	background: var(--ice);
 	color: var(--blue-dark);
-	font-size: .74rem;
+	font-size: .92rem;
 	font-weight: 700;
+	letter-spacing: .015em;
 	text-align: left;
 	vertical-align: middle;
 }
 
 tbody td {
-	padding: 1rem .8rem;
+	padding: 1.05rem .9rem;
 	background: #fff;
 	color: #314a56;
 }
@@ -237,7 +257,7 @@ td:nth-child(2) {
 }
 
 .current-total-column {
-	min-width: 18rem;
+	min-width: 22rem;
 }
 
 .current-total-column .sort-button {
@@ -247,8 +267,8 @@ td:nth-child(2) {
 .current-total-column .sort-button span {
 	display: inline-block;
 	margin-top: .2rem;
-	font-size: .58rem;
-	font-weight: 400;
+	font-size: .72rem;
+	font-weight: 500;
 	color: var(--muted);
 }
 
@@ -292,7 +312,8 @@ td:nth-child(2) {
 
 .legend {
 	margin: .8rem 0 0;
-	font-size: .68rem;
+	font-size: .88rem;
+	font-weight: 700;
 	color: var(--gold);
 }
 
@@ -317,20 +338,20 @@ td:nth-child(2) {
 	}
 
 	.page-header h1 {
-		font-size: 2.8rem;
+		font-size: 3.1rem;
 	}
 
 	.subtitle {
-		font-size: .8rem;
+		font-size: .95rem;
 	}
 
 	.summary {
 		gap: .6rem 1rem;
-		font-size: .64rem;
+		font-size: .78rem;
 	}
 
 	.summary strong {
-		font-size: .85rem;
+		font-size: .95rem;
 	}
 
 	.toolbar {
