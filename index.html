@@ -9,7 +9,7 @@
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link href="https://fonts.googleapis.com/css2?family=Jersey+10&display=swap" rel="stylesheet">
 	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.min.css">
-	<link rel="stylesheet" href="styles.css?v=12">
+	<link rel="stylesheet" href="styles.css?v=13">
 </head>
 <body>
 	<main class="container page-shell">
@@ -18,9 +18,9 @@
 			<p class="subtitle">WORLD 1 SPEEDRUN</p>
 
 			<div class="summary" aria-label="Leaderboard summary">
-				<span><strong id="profile-count">—</strong> RUNNERS</span>
-				<span><strong id="full-run-count">—</strong> FULL RUNS</span>
-				<span>CR <strong id="fastest-full-run">—</strong></span>
+				<span><strong id="profile-count">—</strong><em>RUNNERS</em></span>
+				<span><strong id="full-run-count">—</strong><em>FULL RUNS</em></span>
+				<span><strong>CR</strong><em id="fastest-full-run">—</em></span>
 			</div>
 		</header>
 
@@ -39,7 +39,6 @@
 				<table>
 					<thead>
 						<tr>
-							<th class="rank-column" scope="col">#</th>
 							<th class="runner-column" scope="col"><button class="sort-button" data-key="name" type="button">RUNNER</button></th>
 							<th scope="col"><button class="sort-button" data-key="w1l1" type="button">W1L1</button></th>
 							<th scope="col"><button class="sort-button" data-key="w1l2" type="button">W1L2</button></th>
@@ -61,6 +60,6 @@
 		</section>
 	</main>
 
-	<script src="app.js?v=12"></script>
+	<script src="app.js?v=13"></script>
 </body>
 </html>
