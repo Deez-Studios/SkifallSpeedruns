@@ -9,12 +9,13 @@
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link href="https://fonts.googleapis.com/css2?family=Silkscreen:wght@400;700&display=swap" rel="stylesheet">
 	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.min.css">
-	<link rel="stylesheet" href="styles.css?v=7">
+	<link rel="stylesheet" href="styles.css?v=9">
 </head>
 <body>
 	<main class="container page-shell">
 		<header class="page-header">
-			<h1>WORLD 1 SPEEDRUN</h1>
+			<h1>SKIFALL</h1>
+			<p class="subtitle">WORLD 1 SPEEDRUN</p>
 
 			<div class="summary" aria-label="Leaderboard summary">
 				<span><strong id="profile-count">—</strong> RUNNERS</span>
@@ -26,8 +27,10 @@
 		<section class="leaderboard" aria-label="World 1 speedrun leaderboard">
 			<div class="toolbar">
 				<input id="search-input" type="search" autocomplete="off" spellcheck="false" placeholder="SEARCH RUNNER" aria-label="Search runners">
-				<button id="refresh-button" type="button">REFRESH</button>
-				<small id="updated-label">LOADING...</small>
+				<div class="refresh-group">
+					<button id="refresh-button" type="button">REFRESH</button>
+					<small id="updated-label">LOADING...</small>
+				</div>
 			</div>
 
 			<div id="status" class="status" role="status"></div>
@@ -46,7 +49,7 @@
 							<th scope="col"><button class="sort-button" data-key="w1l6" type="button">W1L6</button></th>
 							<th scope="col"><button class="sort-button" data-key="w1l7" type="button">W1L7</button></th>
 							<th scope="col"><button class="sort-button" data-key="w1l8" type="button">W1L8</button></th>
-							<th class="total-column" scope="col"><button class="sort-button" data-key="current_total" type="button">CURRENT</button></th>
+							<th class="total-column current-total-column" scope="col"><button class="sort-button" data-key="current_total" type="button">CURRENT TOTAL<br><span>(MORE LEVELS TO COMPLETE)</span></button></th>
 							<th class="total-column" scope="col"><button class="sort-button active" data-key="all_levels_total" type="button">FULL GAME</button></th>
 						</tr>
 					</thead>
@@ -54,10 +57,10 @@
 				</table>
 			</div>
 
-			<p class="legend"><span>GOLD = RECORD</span></p>
+			<p class="legend">GOLD = RECORD</p>
 		</section>
 	</main>
 
-	<script src="app.js?v=7"></script>
+	<script src="app.js?v=9"></script>
 </body>
 </html>
