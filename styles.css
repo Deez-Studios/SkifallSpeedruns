@@ -1,5 +1,5 @@
 :root {
-	--pico-font-family: "Jersey 10", monospace;
+	--pico-font-family: "DotGothic16", monospace;
 	--pico-font-size: 112.5%;
 	--pico-background-color: #f4f8fa;
 	--pico-color: #102635;
@@ -37,7 +37,7 @@ body {
 
 body {
 	margin: 0;
-	font-family: "Jersey 10", monospace;
+	font-family: "DotGothic16", monospace;
 	color: var(--ink);
 	letter-spacing: .045em;
 }
@@ -61,17 +61,17 @@ table {
 
 .page-header h1 {
 	margin: 0;
-	font-size: clamp(4rem, 6.6vw, 6.5rem);
+	font-size: clamp(3.8rem, 6.2vw, 6.1rem);
 	line-height: .92;
-	letter-spacing: .09em;
+	letter-spacing: .075em;
 	color: var(--ink);
 }
 
 .subtitle {
-	margin: 1.8rem 0 0;
-	font-size: clamp(1.15rem, 1.6vw, 1.45rem);
+	margin: .8rem 0 0;
+	font-size: clamp(1.05rem, 1.45vw, 1.3rem);
 	line-height: 1.2;
-	letter-spacing: .18em;
+	letter-spacing: .13em;
 	color: var(--blue-dark);
 }
 
@@ -137,6 +137,20 @@ table {
 	padding-inline: 1rem;
 	background: var(--snow);
 	line-height: 1;
+}
+
+
+.toolbar input[type="search"] {
+	-webkit-appearance: none;
+	appearance: none;
+	border-radius: 0 !important;
+}
+
+.toolbar input[type="search"]::-webkit-search-decoration,
+.toolbar input[type="search"]::-webkit-search-cancel-button,
+.toolbar input[type="search"]::-webkit-search-results-button,
+.toolbar input[type="search"]::-webkit-search-results-decoration {
+	-webkit-appearance: none;
 }
 
 .toolbar input::placeholder {
