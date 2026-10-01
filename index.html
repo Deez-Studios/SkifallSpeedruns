@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="theme-color" content="#a9d4ef">
+	<title>Skifall Speedrun Records</title>
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600;700&family=Silkscreen:wght@400;700&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+	<main class="page-shell">
+		<header class="site-header">
+			<div class="brand">
+				<div class="brand-name">SKIFALL</div>
+				<div class="brand-subtitle">SPEEDRUN RECORDS</div>
+			</div>
+
+			<div class="summary-strip" aria-label="Leaderboard summary">
+				<div class="summary-item"><span>RUNNERS</span><strong id="profile-count">—</strong></div>
+				<div class="summary-item"><span>FULL RUNS</span><strong id="full-run-count">—</strong></div>
+				<div class="summary-item record"><span>FULL GAME WR</span><strong id="fastest-full-run">—</strong></div>
+			</div>
+		</header>
+
+		<section class="leaderboard" aria-label="Skifall speedrun leaderboard">
+			<div class="leaderboard-topbar">
+				<div class="world-label">
+					<span class="world-dot" aria-hidden="true"></span>
+					WORLD 1
+				</div>
+
+				<div class="controls">
+					<label class="search-control">
+						<span class="sr-only">Find runner</span>
+						<input id="search-input" type="search" autocomplete="off" spellcheck="false" placeholder="FIND RUNNER..." aria-label="Find runner">
+					</label>
+					<button id="refresh-button" class="refresh-button" type="button">REFRESH</button>
+				</div>
+			</div>
+
+			<div class="leaderboard-info">
+				<span id="updated-label">LOADING RECORDS...</span>
+				<span class="sort-hint">CLICK A COLUMN TO SORT</span>
+			</div>
+
+			<div id="status" class="status" role="status"></div>
+
+			<div class="table-wrap">
+				<table>
+					<thead>
+						<tr>
+							<th class="rank-column">#</th>
+							<th class="runner-column"><button class="sort-button" data-key="name" type="button">RUNNER</button></th>
+							<th><button class="sort-button" data-key="w1l1" type="button">W1L1</button></th>
+							<th><button class="sort-button" data-key="w1l2" type="button">W1L2</button></th>
+							<th><button class="sort-button" data-key="w1l3" type="button">W1L3</button></th>
+							<th><button class="sort-button" data-key="w1l4" type="button">W1L4</button></th>
+							<th><button class="sort-button" data-key="w1l5" type="button">W1L5</button></th>
+							<th><button class="sort-button" data-key="w1l6" type="button">W1L6</button></th>
+							<th><button class="sort-button" data-key="w1l7" type="button">W1L7</button></th>
+							<th><button class="sort-button" data-key="w1l8" type="button">W1L8</button></th>
+							<th class="total-column"><button class="sort-button" data-key="current_total" type="button">CURRENT</button></th>
+							<th class="total-column"><button class="sort-button active" data-key="all_levels_total" type="button">FULL GAME</button></th>
+						</tr>
+					</thead>
+					<tbody id="leaderboard-body"></tbody>
+				</table>
+			</div>
+
+			<footer class="leaderboard-footer">
+				<span><i class="record-mark" aria-hidden="true"></i> WORLD RECORD</span>
+				<span>— = NOT COMPLETED</span>
+			</footer>
+		</section>
+	</main>
+
+	<script src="app.js"></script>
+</body>
+</html>
