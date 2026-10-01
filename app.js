@@ -75,12 +75,10 @@ function render() {
 	const bests = getBestTimes(rows);
 
 	body.innerHTML = "";
-	filtered.forEach((row, index) => {
+	filtered.forEach((row) => {
 		const tr = document.createElement("tr");
-		if (index < 3) tr.classList.add(`rank-${index + 1}`);
 
 		const cells = [
-			{ value: index + 1 },
 			{ value: row.name || "Unnamed" },
 			...LEVEL_KEYS.map(key => ({
 				value: formatTime(row[key])
@@ -107,7 +105,7 @@ function render() {
 	if (!filtered.length) {
 		const tr = document.createElement("tr");
 		const td = document.createElement("td");
-		td.colSpan = 12;
+		td.colSpan = 11;
 		td.textContent = rows.length ? "NO RUNNERS FOUND" : "NO RUNS YET";
 		td.className = "empty";
 		td.style.textAlign = "center";
