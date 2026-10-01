@@ -109,7 +109,7 @@ function render() {
 		const tr = document.createElement("tr");
 		const td = document.createElement("td");
 		td.colSpan = 12;
-		td.textContent = rows.length ? "NO RUNNERS FOUND." : "NO RUNS YET.";
+		td.textContent = rows.length ? "NO RUNNERS FOUND" : "NO RUNS YET";
 		td.className = "empty";
 		td.style.textAlign = "center";
 		tr.appendChild(td);
