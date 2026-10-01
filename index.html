@@ -1,82 +1,99 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" data-theme="light">
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<meta name="theme-color" content="#a9d4ef">
+	<meta name="theme-color" content="#eef6f9">
 	<title>Skifall Speedrun Records</title>
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-	<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600;700&family=Silkscreen:wght@400;700&display=swap" rel="stylesheet">
-	<link rel="stylesheet" href="styles.css">
+	<link href="https://fonts.googleapis.com/css2?family=Silkscreen:wght@400;700&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.min.css">
+	<link rel="stylesheet" href="styles.css?v=5">
 </head>
 <body>
-	<main class="page-shell">
-		<header class="site-header">
-			<div class="brand">
-				<div class="brand-name">SKIFALL</div>
-				<div class="brand-subtitle">SPEEDRUN RECORDS</div>
-			</div>
+	<header class="site-header">
+		<nav class="container">
+			<ul>
+				<li><a class="brand" href="#">SKIFALL</a></li>
+				<li class="site-label">Speedrun Records</li>
+			</ul>
+			<ul>
+				<li><span class="world-label">World 1</span></li>
+			</ul>
+		</nav>
+	</header>
 
-			<div class="summary-strip" aria-label="Leaderboard summary">
-				<div class="summary-item"><span>RUNNERS</span><strong id="profile-count">—</strong></div>
-				<div class="summary-item"><span>FULL RUNS</span><strong id="full-run-count">—</strong></div>
-				<div class="summary-item record"><span>FULL GAME WR</span><strong id="fastest-full-run">—</strong></div>
+	<main class="container page">
+		<header class="leaderboard-header">
+			<div>
+				<p class="section-label">Official records</p>
+				<h1>World 1 leaderboard</h1>
+				<p class="intro">Fastest recorded times from Skifall runs.</p>
 			</div>
 		</header>
 
-		<section class="leaderboard" aria-label="Skifall speedrun leaderboard">
-			<div class="leaderboard-topbar">
-				<div class="world-label">
-					<span class="world-dot" aria-hidden="true"></span>
-					WORLD 1
-				</div>
+		<section class="summary" aria-label="Leaderboard summary">
+			<div>
+				<span>Runners</span>
+				<strong id="profile-count">—</strong>
+			</div>
+			<div>
+				<span>Full runs</span>
+				<strong id="full-run-count">—</strong>
+			</div>
+			<div>
+				<span>Full game record</span>
+				<strong id="fastest-full-run">—</strong>
+			</div>
+		</section>
 
-				<div class="controls">
-					<label class="search-control">
-						<span class="sr-only">Find runner</span>
-						<input id="search-input" type="search" autocomplete="off" spellcheck="false" placeholder="FIND RUNNER..." aria-label="Find runner">
-					</label>
-					<button id="refresh-button" class="refresh-button" type="button">REFRESH</button>
-				</div>
+		<section class="records" aria-label="Skifall speedrun leaderboard">
+			<div class="records-toolbar">
+				<label for="search-input">
+					Search runners
+					<input id="search-input" type="search" autocomplete="off" spellcheck="false" placeholder="Runner name">
+				</label>
+				<button id="refresh-button" class="outline" type="button">Refresh</button>
 			</div>
 
-			<div class="leaderboard-info">
-				<span id="updated-label">LOADING RECORDS...</span>
-				<span class="sort-hint">CLICK A COLUMN TO SORT</span>
+			<div class="records-meta">
+				<small id="updated-label">Loading records…</small>
+				<small>Click a column heading to sort.</small>
 			</div>
 
 			<div id="status" class="status" role="status"></div>
 
-			<div class="table-wrap">
-				<table>
+			<figure class="overflow-auto table-wrap">
+				<table class="striped">
 					<thead>
 						<tr>
-							<th class="rank-column">#</th>
-							<th class="runner-column"><button class="sort-button" data-key="name" type="button">RUNNER</button></th>
-							<th><button class="sort-button" data-key="w1l1" type="button">W1L1</button></th>
-							<th><button class="sort-button" data-key="w1l2" type="button">W1L2</button></th>
-							<th><button class="sort-button" data-key="w1l3" type="button">W1L3</button></th>
-							<th><button class="sort-button" data-key="w1l4" type="button">W1L4</button></th>
-							<th><button class="sort-button" data-key="w1l5" type="button">W1L5</button></th>
-							<th><button class="sort-button" data-key="w1l6" type="button">W1L6</button></th>
-							<th><button class="sort-button" data-key="w1l7" type="button">W1L7</button></th>
-							<th><button class="sort-button" data-key="w1l8" type="button">W1L8</button></th>
-							<th class="total-column"><button class="sort-button" data-key="current_total" type="button">CURRENT</button></th>
-							<th class="total-column"><button class="sort-button active" data-key="all_levels_total" type="button">FULL GAME</button></th>
+							<th class="rank-column" scope="col">#</th>
+							<th class="runner-column" scope="col"><button class="sort-button" data-key="name" type="button">Runner</button></th>
+							<th scope="col"><button class="sort-button" data-key="w1l1" type="button">W1L1</button></th>
+							<th scope="col"><button class="sort-button" data-key="w1l2" type="button">W1L2</button></th>
+							<th scope="col"><button class="sort-button" data-key="w1l3" type="button">W1L3</button></th>
+							<th scope="col"><button class="sort-button" data-key="w1l4" type="button">W1L4</button></th>
+							<th scope="col"><button class="sort-button" data-key="w1l5" type="button">W1L5</button></th>
+							<th scope="col"><button class="sort-button" data-key="w1l6" type="button">W1L6</button></th>
+							<th scope="col"><button class="sort-button" data-key="w1l7" type="button">W1L7</button></th>
+							<th scope="col"><button class="sort-button" data-key="w1l8" type="button">W1L8</button></th>
+							<th class="total-column" scope="col"><button class="sort-button" data-key="current_total" type="button">Current</button></th>
+							<th class="total-column" scope="col"><button class="sort-button active" data-key="all_levels_total" type="button">Full game</button></th>
 						</tr>
 					</thead>
 					<tbody id="leaderboard-body"></tbody>
 				</table>
-			</div>
+			</figure>
 
-			<footer class="leaderboard-footer">
-				<span><i class="record-mark" aria-hidden="true"></i> WORLD RECORD</span>
-				<span>— = NOT COMPLETED</span>
-			</footer>
+			<p class="legend"><span class="record-key">Record</span> marks the fastest recorded time in that column. <span>— means not completed.</span></p>
 		</section>
 	</main>
 
-	<script src="app.js"></script>
+	<footer class="container site-footer">
+		<small>Skifall speedrun records</small>
+	</footer>
+
+	<script src="app.js?v=5"></script>
 </body>
 </html>
