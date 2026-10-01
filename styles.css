@@ -1,6 +1,6 @@
 :root {
-	--pico-font-family: "Pixelify Sans", monospace;
-	--pico-font-size: 100%;
+	--pico-font-family: "Jersey 10", monospace;
+	--pico-font-size: 112.5%;
 	--pico-background-color: #f4f8fa;
 	--pico-color: #102635;
 	--pico-muted-color: #6b7f89;
@@ -37,7 +37,7 @@ body {
 
 body {
 	margin: 0;
-	font-family: "Pixelify Sans", monospace;
+	font-family: "Jersey 10", monospace;
 	color: var(--ink);
 }
 
@@ -60,16 +60,15 @@ table {
 
 .page-header h1 {
 	margin: 0;
-	font-size: clamp(3.5rem, 5.4vw, 5.2rem);
-	line-height: .9;
-	letter-spacing: .01em;
-	margin-left: -.05em;
+	font-size: clamp(3rem, 5vw, 4.8rem);
+	line-height: .95;
+	letter-spacing: -.055em;
 	color: var(--ink);
 }
 
 .subtitle {
 	margin: .7rem 0 0;
-	font-size: clamp(1.05rem, 1.45vw, 1.3rem);
+	font-size: clamp(.9rem, 1.35vw, 1.15rem);
 	line-height: 1.2;
 	letter-spacing: .04em;
 	color: var(--blue-dark);
@@ -77,34 +76,18 @@ table {
 
 .summary {
 	display: flex;
-	align-items: center;
+	align-items: baseline;
 	flex-wrap: wrap;
-	gap: .8rem 2rem;
-	margin-top: 1.05rem;
-	font-size: .92rem;
+	gap: .75rem 1.8rem;
+	margin-top: 1rem;
+	font-size: .78rem;
 	color: var(--muted);
 }
 
 .summary strong {
-	margin: 0;
-	font-size: 1.1rem;
-	line-height: 1;
-	color: var(--ink);
-}
-
-.summary span {
-	display: inline-flex;
-	align-items: center;
-	gap: .45rem;
-	line-height: 1;
-}
-
-.rank-heading {
-	display: inline-block;
-	font-family: "Pixelify Sans", monospace;
+	margin-right: .18rem;
 	font-size: 1.05rem;
-	font-weight: 700;
-	line-height: 1;
+	color: var(--ink);
 }
 
 .leaderboard {
@@ -120,18 +103,18 @@ table {
 
 .toolbar input,
 .toolbar button {
-	height: 3rem;
+	height: 3.25rem;
+	min-height: 3.25rem;
 	margin: 0;
 	border: 2px solid var(--ink);
 	box-shadow: none;
-	font-size: .95rem;
+	font-size: 1.05rem;
 }
 
 .toolbar input {
 	width: min(25rem, 100%);
 	padding-inline: 1rem;
 	background: var(--snow);
-	border-radius: 0 !important;
 }
 
 .toolbar input::placeholder {
@@ -161,9 +144,7 @@ table {
 }
 
 .toolbar small {
-	font-size: .9rem;
-	font-weight: 600;
-	line-height: 1;
+	font-size: 1rem;
 	color: var(--muted);
 }
 
@@ -188,10 +169,10 @@ table {
 }
 
 table {
-	min-width: 104rem;
+	min-width: 92rem;
 	margin: 0;
 	border-collapse: collapse;
-	font-size: 1rem;
+	font-size: 1.05rem;
 	font-variant-numeric: tabular-nums;
 }
 
@@ -209,18 +190,17 @@ td:last-child {
 }
 
 thead th {
-	padding: 1rem .9rem;
+	padding: .9rem .8rem;
 	background: var(--ice);
 	color: var(--blue-dark);
-	font-size: .92rem;
+	font-size: 1rem;
 	font-weight: 700;
-	letter-spacing: .015em;
 	text-align: left;
 	vertical-align: middle;
 }
 
 tbody td {
-	padding: 1.05rem .9rem;
+	padding: 1rem .8rem;
 	background: #fff;
 	color: #314a56;
 }
@@ -253,11 +233,14 @@ td:nth-child(2) {
 }
 
 .total-column {
+	width: 15rem;
+	min-width: 15rem;
 	background: #dbeaf0;
 }
 
 .current-total-column {
-	min-width: 22rem;
+	width: 15rem;
+	min-width: 15rem;
 }
 
 .current-total-column .sort-button {
@@ -267,8 +250,8 @@ td:nth-child(2) {
 .current-total-column .sort-button span {
 	display: inline-block;
 	margin-top: .2rem;
-	font-size: .72rem;
-	font-weight: 500;
+	font-size: .8rem;
+	font-weight: 400;
 	color: var(--muted);
 }
 
@@ -312,8 +295,7 @@ td:nth-child(2) {
 
 .legend {
 	margin: .8rem 0 0;
-	font-size: .88rem;
-	font-weight: 700;
+	font-size: .95rem;
 	color: var(--gold);
 }
 
@@ -338,20 +320,20 @@ td:nth-child(2) {
 	}
 
 	.page-header h1 {
-		font-size: 3.1rem;
+		font-size: 2.8rem;
 	}
 
 	.subtitle {
-		font-size: .95rem;
+		font-size: .8rem;
 	}
 
 	.summary {
 		gap: .6rem 1rem;
-		font-size: .78rem;
+		font-size: .64rem;
 	}
 
 	.summary strong {
-		font-size: .95rem;
+		font-size: .85rem;
 	}
 
 	.toolbar {
@@ -366,4 +348,12 @@ td:nth-child(2) {
 	.refresh-group {
 		justify-content: space-between;
 	}
+}
+
+.total-column .sort-button {
+	white-space: normal;
+}
+
+.toolbar input {
+	line-height: 1;
 }
