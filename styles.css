@@ -1,6 +1,6 @@
 :root {
 	--pico-font-family: "IBM Plex Mono", monospace;
-	--pico-font-size: 112.5%;
+	--pico-font-size: 100%;
 	--pico-background-color: #f4f8fa;
 	--pico-color: #102635;
 	--pico-muted-color: #6b7f89;
@@ -49,8 +49,8 @@ table {
 }
 
 .page-shell {
-	max-width: 94rem;
-	padding-top: 3.25rem;
+	max-width: 90rem;
+	padding-top: 2.5rem;
 	padding-bottom: 4rem;
 }
 
@@ -62,7 +62,7 @@ table {
 .page-header h1 {
 	margin: 0;
 	font-family: "Press Start 2P", monospace;
-	font-size: clamp(2.9rem, 5vw, 5rem);
+	font-size: clamp(2.2rem, 4vw, 3.8rem);
 	line-height: 1.05;
 	letter-spacing: .06em;
 	color: var(--ink);
@@ -127,8 +127,8 @@ table {
 
 .toolbar input,
 .toolbar button {
-	height: 3.65rem;
-	min-height: 3.65rem;
+	height: 2.9rem;
+	min-height: 2.9rem;
 	margin: 0;
 	border: 2px solid var(--ink);
 	box-shadow: none;
@@ -223,10 +223,10 @@ table {
 }
 
 table {
-	min-width: 88rem;
+	min-width: 72rem;
 	margin: 0;
 	border-collapse: collapse;
-	font-size: 1.2rem;
+	font-size: 1rem;
 	font-variant-numeric: tabular-nums;
 }
 
@@ -244,7 +244,7 @@ td:last-child {
 }
 
 thead th {
-	padding: 1rem .85rem;
+	padding: .8rem .65rem;
 	background: var(--ice);
 	color: var(--blue-dark);
 	font-size: 1rem;
@@ -255,7 +255,7 @@ thead th {
 }
 
 tbody td {
-	padding: 1rem .85rem;
+	padding: .8rem .65rem;
 	background: #fff;
 	color: #314a56;
 	font-size: 1rem;
@@ -271,7 +271,7 @@ tbody tr:last-child td {
 
 .runner-column,
 td:first-child {
-	min-width: 18rem;
+	min-width: 13rem;
 	text-align: left;
 }
 
@@ -281,14 +281,14 @@ td:first-child {
 }
 
 .total-column {
-	width: 16rem;
-	min-width: 16rem;
+	width: 12rem;
+	min-width: 12rem;
 	background: #dbeaf0;
 }
 
 .current-total-column {
-	width: 16rem;
-	min-width: 16rem;
+	width: 12rem;
+	min-width: 12rem;
 }
 
 .current-total-column .sort-button {
@@ -369,7 +369,7 @@ td:first-child {
 	}
 
 	.page-header h1 {
-		font-size: 3.5rem;
+		font-size: 2.8rem;
 	}
 
 	.subtitle {
