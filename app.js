@@ -16,6 +16,8 @@ const sortButtons = [...document.querySelectorAll(".sort-button")];
 let rows = [];
 let sortKey = "all_levels_total";
 let sortDirection = "asc";
+let loading = false;
+let previousData = "";
 
 function formatTime(centiseconds) {
 	if (centiseconds === null || centiseconds === undefined) return "—";
@@ -121,36 +123,53 @@ function updateSummary() {
 	fastestFullRun.textContent = fullRuns.length ? formatTime(Math.min(...fullRuns.map(row => Number(row.all_levels_total)))) : "—";
 }
 
-async function loadLeaderboard() {
-	status.classList.remove("visible");
-	refreshButton.disabled = true;
-	refreshButton.textContent = "LOADING...";
+async function loadLeaderboard(silent = false) {
+    if (loading) return;
+    loading = true;
 
-	try {
-		const response = await fetch(`${SUPABASE_URL}/rest/v1/${LEADERBOARD_VIEW}?select=*`, {
-			headers: {
-				apikey: SUPABASE_PUBLISHABLE_KEY
-			}
-		});
+    if (!silent) {
+        status.classList.remove("visible");
+        refreshButton.disabled = true;
+        refreshButton.textContent = "LOADING...";
+    }
 
-		if (!response.ok) throw new Error(`Supabase returned ${response.status}`);
-		rows = await response.json();
-		updateSummary();
-		render();
-		updatedLabel.textContent = `UPDATED ${new Date().toLocaleTimeString([], { hour: "2-digit", minute: "2-digit" })}`;
-	} catch (error) {
-		console.error(error);
-		status.textContent = "COULD NOT LOAD RECORDS.";
-		status.classList.add("visible");
-		updatedLabel.textContent = "OFFLINE";
-	} finally {
-		refreshButton.disabled = false;
-		refreshButton.textContent = "REFRESH";
-	}
+    try {
+        const response = await fetch(`${SUPABASE_URL}/rest/v1/${LEADERBOARD_VIEW}?select=*`, {
+            headers: { apikey: SUPABASE_PUBLISHABLE_KEY },
+            cache: "no-store"
+        });
+
+        if (!response.ok) throw new Error(`Supabase returned ${response.status}`);
+        const newRows = await response.json();
+        const newData = JSON.stringify(newRows);
+
+        if (newData !== previousData) {
+            rows = newRows;
+            previousData = newData;
+            updateSummary();
+            render();
+        }
+
+        status.classList.remove("visible");
+        updatedLabel.textContent = `UPDATED ${new Date().toLocaleTimeString([], { hour: "2-digit", minute: "2-digit" })}`;
+    } catch (error) {
+        console.error(error);
+        if (!silent || !previousData) {
+            status.textContent = "COULD NOT LOAD RECORDS.";
+            status.classList.add("visible");
+            updatedLabel.textContent = "OFFLINE";
+        }
+    } finally {
+        loading = false;
+        if (!silent) {
+            refreshButton.disabled = false;
+            refreshButton.textContent = "REFRESH";
+        }
+    }
 }
 
 searchInput.addEventListener("input", render);
-refreshButton.addEventListener("click", loadLeaderboard);
+refreshButton.addEventListener("click", () => loadLeaderboard());
 
 for (const button of sortButtons) {
 	button.addEventListener("click", () => {
@@ -167,3 +186,7 @@ for (const button of sortButtons) {
 
 updateSortButtons();
 loadLeaderboard();
+
+setInterval(() => {
+    if (!document.hidden) loadLeaderboard(true);
+}, 10000);
